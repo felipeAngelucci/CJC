@@ -1,27 +1,23 @@
-// The Kelvin amount is constant. The user is asked to enter Kelvin value. Ex: 315.
-let kelvin = prompt('Please enter a value in Kelvin: ');
-// The Celsius amount is Kelvin subtracted by 273.
-let celsius = kelvin - 273;
-
-// The Newton amount is Celsius * (33/100).
-let newton = Math.floor(celsius * (33/100));
-
-// This equation calculates Fahrenheit.
-let fahrenheit = celsius * (9/5) + 32;
-// This rounds the decimals after the integer value of Fahrenheit
-fahrenheit = Math.floor(fahrenheit);
-
+// This is the temperature conversion function to streamline the conversion process and make it more efficient. It encapsulates the equations in a function that makes the process simpler and reusable.
+function convertTemperature(kelvin) {
+  // The Celsius amount is Kelvin subtracted by 273.
+  const celsius = kelvin - 273;
+  // This equation calculates Fahrenheit and rounds the decimals after the integer value of Fahrenheit.
+  const fahrenheit = Math.floor(celsius * (9/5) + 32);
+  // The Newton amount is Celsius * (33/100).
+  const newton = Math.floor(celsius * (33/100));
+  // -------------------------------
+  // Further improving this Kelvin Weather app to utilize user input functionality and other features with my own ideas of what to code next.
+  // This block of code thanks the user for inputting a value and displays the conversion results. String interpolation is utilized to make the code easier to read.
+  console.log(`Thank you for providing ${kelvin} degrees Kelvin as your value to be converted.`)
+  console.log(`${kelvin} Kelvin is ${fahrenheit} degrees Fahrenheit.`);
+  console.log(`${kelvin} Kelvin is ${celsius} degrees Celsius.`);
+  console.log(`${kelvin} Kelvin ${newton} degrees Newton.`);
 // -------------------------------
-// Further improving this Kelvin Weather app to utilize user input functionality and other features with my own ideas of what to code next.
-console.log(`Thank you for providing ${kelvin} degrees Kelvin as your value to be converted.`)
+}
 
-// -------------------------------
+// The user is asked to enter the Kelvin value. Ex: 315.
+const kelvin = prompt('Please enter a value in Kelvin: ');
 
-// Displaying the temperature of Kelvin in comparison to Fahrenheit and Celsius.
-console.log(`\nThe temperature is ${kelvin} degrees Kelvin.`);
-// Displaying the temperature of Kelvin in Fahrenheit using string interpolation.
-console.log(`\nWhich is ${fahrenheit} degrees Fahrenheit.`);
-// Displaying the temperature of kelvin in Celsius using string interpolation.
-console.log(`\nWhich is ${celsius} degrees Celsius.`);
-// Displaying the temperature of Celsius to the Newton scale using the equation.
-console.log(`\nWhich is ${newton} degrees Newton.`);
+// This statement calls the function to complete the equations and display the conversions to the user.
+convertTemperature(kelvin);
