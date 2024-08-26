@@ -9,3 +9,11 @@ countToThree();
 function countToThree() {
   console.log('One, two, three.');
 }
+function getReminder() {
+  console.log('Water the plants.');
+}
+getReminder();
+function greetInSpanish() {
+  console.log('Buenas tardes.');
+}
+greetInSpanish();
